@@ -10,17 +10,17 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "miembro")
+@Table(name = "user")
 public class User implements Serializable {
 
 	private static final long serialVersionUID = -854530626840992392L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ID_MIEMBRO")
+	@Column(name = "ID_USER")
 	private Integer userId;
 
-	@Column(name = "NOMBRES")
+	@Column(name = "USERNAME")
 	private String username;
 
 
