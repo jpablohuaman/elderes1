@@ -5,9 +5,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import teamhalcon.dao.UserDAO;
+import teamhalcon.domain.Miembro;
+import teamhalcon.domain.MiembroFamiliar;
 import teamhalcon.domain.User;
+import teamhalcon.domain.ViewCabezas;
 
 @Service
 @Transactional
@@ -34,6 +40,18 @@ public class UserBO {
 
 	public User getUserById(int userId) {
 		return this.userDAO.getUserById(userId);
+	}
+
+	public List<ViewCabezas> getCabezasFamilias(String usuario, String pass) {
+		return this.userDAO.getCabezasFamilias(usuario, pass);
+		
+	}
+	public List<Miembro> getMiembrosSacerdocio(String usuario, String pass){
+		return this.userDAO.getMiembrosSacerdocio(usuario, pass);	
+	}
+	
+	public List<MiembroFamiliar> getMiembrosFamiliares(String usuario, String pass){
+		return this.userDAO.getMiembrosFamiliares(usuario, pass);	
 	}
 
 }
