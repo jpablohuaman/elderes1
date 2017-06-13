@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import teamhalcon.bo.UserBO;
+import teamhalcon.domain.Maestro;
 import teamhalcon.domain.Miembro;
 import teamhalcon.domain.MiembroFamiliar;
 import teamhalcon.domain.User;
@@ -57,6 +58,22 @@ public class HomeController {
 	@RequestMapping(value = "/adduser", method = RequestMethod.POST)
 	public @ResponseBody void addUser(@RequestBody User user) {
 		userBO.createUser(user);
+	}
+	
+	@RequestMapping(value = "/miembros", method = RequestMethod.GET)
+	public @ResponseBody List<Miembro> getMiembroList() {
+		// return user list in JSON
+		return userBO.getMiembroList();
+	}
+
+	@RequestMapping(value = "/maestros", method = RequestMethod.GET)
+	public @ResponseBody List<Maestro> getMaestroList() {
+		return this.userBO.getMaestroList();
+	}
+	
+	@RequestMapping(value = "/miembrosfamiliares", method = RequestMethod.GET)
+	public @ResponseBody List<MiembroFamiliar> getMiembroFamiliarList() {
+		return this.userBO.getMiembroFamiliarList();
 	}
 	
 	@RequestMapping(value = "/cabezasdefamilias", method = RequestMethod.GET)

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import teamhalcon.domain.Maestro;
 import teamhalcon.domain.Miembro;
 import teamhalcon.domain.MiembroFamiliar;
 import teamhalcon.domain.User;
@@ -105,5 +106,29 @@ public class UserDAO {
 			return listVenta;
 		}
 		return null;
+	}
+
+	public List<Miembro> getMiembroList() {
+		Criteria criteria = this.getSessionFactory().getCurrentSession()
+				.createCriteria(Miembro.class);
+		@SuppressWarnings("unchecked")
+		List<Miembro> miembroList = criteria.list();
+		return miembroList;
+	}
+	
+	public List<Maestro> getMaestroList() {
+		Criteria criteria = this.getSessionFactory().getCurrentSession()
+				.createCriteria(Maestro.class);
+		@SuppressWarnings("unchecked")
+		List<Maestro> maestroList = criteria.list();
+		return maestroList;
+	}
+	
+	public List<MiembroFamiliar> getMiembroFamiliarList() {
+		Criteria criteria = this.getSessionFactory().getCurrentSession()
+				.createCriteria(MiembroFamiliar.class);
+		@SuppressWarnings("unchecked")
+		List<MiembroFamiliar> familiarList = criteria.list();
+		return familiarList;
 	}
 }

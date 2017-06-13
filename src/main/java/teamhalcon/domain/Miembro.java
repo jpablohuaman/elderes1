@@ -41,11 +41,15 @@ public class Miembro implements Serializable {
   private Integer id_familia;
 	@Column(name = "TIPO_FAMILIAR")
   private String tipo_familiar;
+	@Column(name = "FECHA_EDICION")
+  private String fecha_edicion;
+	@Column(name = "USUARIO_EDICION")
+  private String usuario_edicion;
   
   
 public Miembro(Integer id_miembro, String nombres, String telefono, String direccion, String fecha_nacimiento,
 		String distrito, String user, String password, String disponibilidad, String correo, Integer id_familia,
-		String tipo_familiar) {
+		String tipo_familiar,String fecha_edicion,String usuario_edicion) {
 	super();
 	this.id_miembro = id_miembro;
 	this.nombres = nombres;
@@ -59,6 +63,8 @@ public Miembro(Integer id_miembro, String nombres, String telefono, String direc
 	this.correo = correo;
 	this.id_familia = id_familia;
 	this.tipo_familiar = tipo_familiar;
+	this.fecha_edicion = fecha_edicion;
+	this.usuario_edicion = usuario_edicion;
 }
 
 
@@ -138,6 +144,26 @@ public String getTipo_familiar() {
 }
 public void setTipo_familiar(String tipo_familiar) {
 	this.tipo_familiar = tipo_familiar;
+}
+
+
+public String getFecha_edicion() {
+	return fecha_edicion;
+}
+
+
+public void setFecha_edicion(String fecha_edicion) {
+	this.fecha_edicion = fecha_edicion;
+}
+
+
+public String getUsuario_edicion() {
+	return usuario_edicion;
+}
+
+
+public void setUsuario_edicion(String usuario_edicion) {
+	this.usuario_edicion = usuario_edicion;
 }
   
   

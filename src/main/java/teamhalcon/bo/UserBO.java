@@ -2,6 +2,7 @@ package teamhalcon.bo;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import teamhalcon.dao.UserDAO;
+import teamhalcon.domain.Maestro;
 import teamhalcon.domain.Miembro;
 import teamhalcon.domain.MiembroFamiliar;
 import teamhalcon.domain.User;
@@ -52,6 +54,18 @@ public class UserBO {
 	
 	public List<MiembroFamiliar> getMiembrosFamiliares(String usuario, String pass){
 		return this.userDAO.getMiembrosFamiliares(usuario, pass);	
+	}
+
+	public List<Miembro> getMiembroList(){
+		return this.userDAO.getMiembroList();
+	}
+	
+	public List<Maestro> getMaestroList() {
+		return this.userDAO.getMaestroList();
+	}
+	
+	public List<MiembroFamiliar> getMiembroFamiliarList() {
+		return this.userDAO.getMiembroFamiliarList();
 	}
 
 }
