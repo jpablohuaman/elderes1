@@ -90,7 +90,7 @@ public class HomeController {
 		return userBO.getMiembrosSacerdocio(usuario, pass);
 	}
 	
-	@RequestMapping(value = "/miembrosfamiliares", method = RequestMethod.GET)
+	@RequestMapping(value = "/miembrosfamiliaresmiembro", method = RequestMethod.GET)
     public @ResponseBody List<MiembroFamiliar> getMiembrosFamiliares(@RequestParam(value = "usuario", 
     required = false) String usuario,@RequestParam(value = "pass", required = false) String pass) {
 		
