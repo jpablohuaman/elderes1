@@ -35,6 +35,10 @@ public class Miembro implements Serializable {
   private String password;
 	@Column(name = "DISPONIBILIDAD")
   private String disponibilidad;
+	@Column(name = "SACERDOCIO")
+	  private String sacerdocio;
+	@Column(name = "ES_MAESTRO")
+	  private String es_maestro;
 	@Column(name = "CORREO")
   private String correo;
 	@Column(name = "ID_FAMILIA")
@@ -46,26 +50,27 @@ public class Miembro implements Serializable {
 	@Column(name = "USUARIO_EDICION")
   private String usuario_edicion;
   
-  
 public Miembro(Integer id_miembro, String nombres, String telefono, String direccion, String fecha_nacimiento,
-		String distrito, String user, String password, String disponibilidad, String correo, Integer id_familia,
-		String tipo_familiar,String fecha_edicion,String usuario_edicion) {
-	super();
-	this.id_miembro = id_miembro;
-	this.nombres = nombres;
-	this.telefono = telefono;
-	this.direccion = direccion;
-	this.fecha_nacimiento = fecha_nacimiento;
-	this.distrito = distrito;
-	this.user = user;
-	this.password = password;
-	this.disponibilidad = disponibilidad;
-	this.correo = correo;
-	this.id_familia = id_familia;
-	this.tipo_familiar = tipo_familiar;
-	this.fecha_edicion = fecha_edicion;
-	this.usuario_edicion = usuario_edicion;
-}
+			String distrito, String user, String password, String disponibilidad, String sacerdocio, String es_maestro,
+			String correo, Integer id_familia, String tipo_familiar, String fecha_edicion, String usuario_edicion) {
+		super();
+		this.id_miembro = id_miembro;
+		this.nombres = nombres;
+		this.telefono = telefono;
+		this.direccion = direccion;
+		this.fecha_nacimiento = fecha_nacimiento;
+		this.distrito = distrito;
+		this.user = user;
+		this.password = password;
+		this.disponibilidad = disponibilidad;
+		this.sacerdocio = sacerdocio;
+		this.es_maestro = es_maestro;
+		this.correo = correo;
+		this.id_familia = id_familia;
+		this.tipo_familiar = tipo_familiar;
+		this.fecha_edicion = fecha_edicion;
+		this.usuario_edicion = usuario_edicion;
+	}
 
 
 public Miembro() {
@@ -164,6 +169,26 @@ public String getUsuario_edicion() {
 
 public void setUsuario_edicion(String usuario_edicion) {
 	this.usuario_edicion = usuario_edicion;
+}
+
+
+public String getSacerdocio() {
+	return sacerdocio;
+}
+
+
+public void setSacerdocio(String sacerdocio) {
+	this.sacerdocio = sacerdocio;
+}
+
+
+public String getEs_maestro() {
+	return es_maestro;
+}
+
+
+public void setEs_maestro(String es_maestro) {
+	this.es_maestro = es_maestro;
 }
   
   
