@@ -16,9 +16,9 @@ public class Maestro implements Serializable {
 	private static final long serialVersionUID = -854530626840992392L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID_MIEMBRO")
     private Integer id_miembro;
+	@Id
 	@Column(name = "ID_MAESTRO")
     private Integer id_maestro;
 	@Column(name = "FECHA_EDICION")
